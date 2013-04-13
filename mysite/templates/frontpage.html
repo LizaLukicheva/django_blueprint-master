@@ -2,8 +2,12 @@
 
 {% block content %}
     <div class="hero-unit">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+
+            {% for news in news_list %}
+                <h1><a href="/detail/{{ news.pk }}">{{ news.title }}</a></h1>
+                <h2>{{ news.date }}</h2>
+                <p>{{ news.description }}</p>
+            {% endfor %}
+
     </div>
 {% endblock %}
